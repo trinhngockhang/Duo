@@ -46,6 +46,7 @@ var preload = function(){
   Nakama.game.load.atlasJSONHash('assets', 'Assets/assets.png', 'Assets/assets.json');
   Nakama.game.load.image('background', 'Assets/Map1.png');
   Nakama.game.load.image('stripes_cyan', 'Assets/Textures/Obstacles/Stripes/cyan.png');
+  Nakama.game.load.image('star','/Assets/Textures/Obstacles/Star/Star.png');
 }
 
 // initialize the game
@@ -60,7 +61,7 @@ var create = function(){
 
 
   Nakama.enemies.push(
-    new Horizontal('stripes_cyan')
+    new enlarge(260,360)
   );
 
 
