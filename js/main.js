@@ -61,7 +61,7 @@ var create = function(){
 
 
   Nakama.enemies.push(
-    new enlarge(260,360)
+    new cross(260,360)
   );
 
 
