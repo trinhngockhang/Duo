@@ -33,6 +33,7 @@ var preload = function() {
 var create = function() {
   Nakama.game.physics.startSystem(Phaser.Physics.P2JS);
   Nakama.keyboard = Nakama.game.input.keyboard;
+
   Nakama.game.world.setBounds(0,0,Nakama.configs.GAME_WIDTH,Nakama.configs.GAME_HEIGHT);
   Nakama.playerGroup = Nakama.game.add.physicsGroup();
 
