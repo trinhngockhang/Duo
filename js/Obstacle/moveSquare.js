@@ -1,10 +1,10 @@
 class moveSquare{
   constructor(x,y){
     this.x = x;
-    this.sprite1 = Nakama.game.add.sprite(x,y,'star');
-    this.sprite2 = Nakama.game.add.sprite(x+50,y,'star');
-    this.sprite3 = Nakama.game.add.sprite(x,y-50,'star');
-    this.sprite18 = Nakama.game.add.sprite(x+50,y-50,'star');
+    this.sprite1 = Nakama.enemiesGroup.create(x,y,'star');
+    this.sprite2 = Nakama.enemiesGroup.create(x+50,y,'star');
+    this.sprite3 = Nakama.enemiesGroup.create(x,y-50,'star');
+    this.sprite18 = Nakama.enemiesGroup.create(x+50,y-50,'star');
     Nakama.game.physics.arcade.enable(this.sprite1);
     Nakama.game.physics.arcade.enable(this.sprite2);
     Nakama.game.physics.arcade.enable(this.sprite3);

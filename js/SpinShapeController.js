@@ -4,7 +4,7 @@ class SpinShapeController{
     var velocity = direction*Math.random();
     SpinShapeController.colors.forEach(function(color) {
       let sprite = new ObstacleController("circle_"+color,color,SpinShapeController.configs,SpinShapeController.configs.offsetAngle,position);
-      
+
       sprite.sprite.scale.setTo(scale,scale);
       sprite.sprite.body.angularVelocity*=velocity*1.5;
       parts.push(sprite.sprite);

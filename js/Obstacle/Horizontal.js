@@ -1,16 +1,16 @@
 class Horizontal {
-  constructor(sprite){
+  constructor(x,y){
     // this.sprite = Nakama.enemies.create(320,480,'stripes_cyan');
-    this.sprite = Nakama.game.add.sprite(600,480,sprite);
-    this.sprite1 = Nakama.game.add.sprite(0,480,sprite);
-    this.sprite2 = Nakama.game.add.sprite(300,480,sprite);
+    this.sprite = Nakama.enemiesGroup.create(x+300,480,'stripes_cyan');
+    this.sprite1 = Nakama.enemiesGroup.create(x-300,480,'stripes_cyan');
+    this.sprite2 = Nakama.enemiesGroup.create(x,480,'stripes_cyan');
     Nakama.game.physics.arcade.enable(this.sprite);
     Nakama.game.physics.arcade.enable(this.sprite1);
     Nakama.game.physics.arcade.enable(this.sprite2);
     this.sprite.body.setSize(85,85,50,50);
     this.sprite1.body.setSize(85,85,50,50);
     this.sprite2.body.setSize(85,85,50,50);
-
+    this.x = x;
     // this.sprite.body.collideWorldBounds= true;
     // this.sprite1.body.collideWorldBounds= true;
 
