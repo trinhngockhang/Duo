@@ -16,10 +16,25 @@ var playState = {
 
 
     Nakama.pool = [];
-    // Nakama.pool.push(new moveSquare(300,480));
-    // Nakama.pool.push(new freezePoison(320,0));
-    // Nakama.pool.push(new CircleMoveController(320,0));
-      Nakama.pool.push(new Horizontal(320,480));
+    Nakama.arr = [];
+    for(let i=0; i<2; i++){
+      Nakama.arr.push(Math.floor(Math.random() * 2) + 1);
+    }
+    var y = 300;
+    for(let i=0;i <Nakama.arr.length; i++){
+      switch (1) {
+        case 0:
+          Nakama.pool.push(new angularItselft(200,y));
+          y -= 600;
+          break;
+        case 1:
+          Nakama.pool.push(new cross(200,y));
+          y -= 600;
+          break;
+
+
+      }
+    }
 
     Nakama.point = new enlarge(320,-Nakama.configs.GAME_HEIGHT/4);
     Nakama.player.forEach(function(sprite){
