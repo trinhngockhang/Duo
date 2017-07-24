@@ -17,26 +17,44 @@ var playState = {
 
     Nakama.pool = [];
     Nakama.arr = [];
-    for(let i=0; i<2; i++){
-      Nakama.arr.push(Math.floor(Math.random() * 2) + 1);
+    for(let i=0; i<20; i++){
+      Nakama.arr.push(Math.floor(Math.random() * (5-0+1)) + 0);
     }
     var y = 300;
     for(let i=0;i <Nakama.arr.length; i++){
-      switch (1) {
+      switch (Nakama.arr[i]) {
         case 0:
-          Nakama.pool.push(new angularItselft(200,y));
+          Nakama.pool.push(new angularItselft(300,y));
           y -= 600;
           break;
         case 1:
           Nakama.pool.push(new cross(200,y));
           y -= 600;
           break;
-
-
+        case 2:
+          Nakama.pool.push(new CircleMoveController(300,y));
+          y -= 600;
+          break;
+        case 3:
+          Nakama.pool.push(new freezePoison(300,y));
+          y -= 600;
+          break;
+        case 6:
+          Nakama.pool.push(new Horizontal(300,y));
+          y -= 600;
+          break;
+       case 5:
+          Nakama.pool.push(new moveSquare(300,y));
+          y -= 600;
+          break;
+        case 4:
+          Nakama.pool.push(new enlarge(300,y));
+          y -= 600;
+          break;
       }
     }
 
-    Nakama.point = new enlarge(320,-Nakama.configs.GAME_HEIGHT/4);
+
     Nakama.player.forEach(function(sprite){
       Nakama.game.physics.p2.enable(sprite);
       sprite.fixedToCamera = true;
@@ -49,7 +67,7 @@ var playState = {
       sprite.update();
       Nakama.game.world.setBounds(0, -sprite.yChange, Nakama.configs.GAME_WIDTH, Nakama.configs.GAME_HEIGHT);
     });
-    Nakama.point.update();
+    // Nakama.point.update();
     Nakama.pool.forEach(function(obs) {
       obs.update();
     });
